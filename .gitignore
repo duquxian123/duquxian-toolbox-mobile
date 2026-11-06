@@ -1,0 +1,26 @@
+# Android Studio
+.idea/
+*.iml
+.gradle/
+.kotlin/
+build/
+**/build/
+local.properties
+
+# Local, project-scoped tooling
+.tooling/
+
+# Signing and release material
+*.jks
+*.keystore
+keystore.properties
+
+# Generated install packages stay local.
+dist/
+*.apk
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+

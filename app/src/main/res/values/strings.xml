@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">独去闲工具箱</string>
+    <string name="toolbar_title">独去闲工具箱</string>
+    <string name="toolbar_settings">悬浮球</string>
+    <string name="toolbar_permissions">权限检查</string>
+
+    <string name="bubble_name">悬浮球</string>
+    <string name="bubble_summary">仿Flyme悬浮球</string>
+    <string name="status_not_enabled">未开启</string>
+    <string name="status_missing_permissions">缺少权限</string>
+    <string name="status_starting">正在启动</string>
+    <string name="status_running">运行中</string>
+    <string name="start_short">启动</string>
+    <string name="stop_short">停止</string>
+    <string name="about_title">说明与隐私</string>
+
+    <string name="debug_log">诊断日志</string>
+    <string name="debug_log_title">诊断日志</string>
+    <string name="debug_log_description">日志仅保存在本机，不会自动上传。可以复制最近日志，也可以导出完整文本文件后传到电脑。</string>
+    <string name="copy_log">复制摘要</string>
+    <string name="export_log_file">导出完整日志</string>
+    <string name="export_log_file_name">独去闲工具箱诊断日志.txt</string>
+    <string name="clear_log">清空</string>
+    <string name="log_empty">暂无日志</string>
+    <string name="log_copied">日志摘要已复制</string>
+    <string name="log_saved">日志文件已保存</string>
+    <string name="log_save_failed">日志文件保存失败</string>
+    <string name="clear_log_confirm_title">清空诊断日志？</string>
+    <string name="clear_log_confirm_message">清空后无法恢复。</string>
+    <string name="clear">清空</string>
+
+    <string name="accessibility_unavailable_toast">无障碍服务未连接，请先检查权限设置</string>
+    <string name="service_channel_name">悬浮球</string>
+    <string name="service_channel_description">保持用户主动开启的悬浮球运行</string>
+    <string name="notification_title">悬浮球正在运行</string>
+    <string name="notification_text">单击通知返回工具箱，也可以在这里停止它。</string>
+    <string name="notification_stop">停止</string>
+
+    <string name="bubble_running_description">悬浮球已开启</string>
+    <string name="bubble_stopped_description">开启后可在所有应用上方使用</string>
+    <string name="bubble_missing_description">请先补齐悬浮窗、通知和无障碍权限</string>
+    <string name="permission_status_label">权限状态</string>
+    <string name="permission_status_ready">正常</string>
+    <string name="permission_status_action">需要处理</string>
+
+    <string name="gesture_section">手势动作</string>
+    <string name="gesture_title_single">单击</string>
+    <string name="gesture_title_up">上滑</string>
+    <string name="gesture_title_down">下滑</string>
+    <string name="gesture_title_left">左滑</string>
+    <string name="gesture_title_right">右滑</string>
+    <string name="gesture_title_drag">长按拖动</string>
+    <string name="drag_settings_title">拖动设置</string>
+    <string name="drag_vibration_enabled">震动已开启</string>
+    <string name="drag_vibration_disabled">震动已关闭</string>
+    <string name="gesture_config_title">%1$s设置</string>
+    <string name="gesture_vibration">手势震动反馈</string>
+    <string name="gesture_vibration_hint">当前手势触发时轻震一次</string>
+    <string name="appearance_section">外观</string>
+    <string name="bubble_size_label">悬浮球大小</string>
+    <string name="bubble_opacity_label">悬浮球透明度</string>
+    <string name="percentage_format">%1$d%%</string>
+    <string name="percentage_default">100%%</string>
+    <string name="auto_hide_section">自动隐藏</string>
+    <string name="auto_hide_games">游戏中自动隐藏</string>
+    <string name="auto_hide_games_hint">识别到游戏应用在前台时隐藏</string>
+    <string name="auto_hide_fullscreen">全屏时自动隐藏</string>
+    <string name="auto_hide_fullscreen_hint">状态栏和导航栏隐藏时自动隐藏</string>
+    <string name="switch_enabled">已开启</string>
+    <string name="switch_disabled">已关闭</string>
+    <string name="gesture_unavailable_screenshot">截屏（需要 Android 14+）</string>
+    <string name="view_help">查看操作说明</string>
+    <string name="system_settings_note">Android 系统设置页会暂时隐藏悬浮球，离开后自动恢复。</string>
+    <string name="help_dialog_title">使用方法</string>
+    <string name="help_dialog_message">单击、上滑、下滑、左滑和右滑都可以分别设置动作与震动反馈。\n\n长按后拖动可以移动悬浮球位置。\n\n选择“手势震动反馈”后，只有动作实际执行成功才会震动；“无动作”和动作失败不会震动。\n\n进入 Android 系统设置页时悬浮球会暂时隐藏。</string>
+    <string name="check_permissions">检查权限</string>
+    <string name="got_it">知道了</string>
+    <string name="cancel">取消</string>
+
+    <string name="action_none">无动作</string>
+    <string name="action_back">返回上一级</string>
+    <string name="action_home">回到桌面</string>
+    <string name="action_lock_screen">锁定屏幕</string>
+    <string name="action_recents">最近任务</string>
+    <string name="action_notifications">打开通知栏</string>
+    <string name="action_quick_settings">打开快捷开关</string>
+    <string name="action_open_app">打开指定应用</string>
+    <string name="action_volume_up">媒体音量加</string>
+    <string name="action_volume_down">媒体音量减</string>
+    <string name="action_flashlight">手电筒</string>
+    <string name="action_screenshot">截屏</string>
+    <string name="action_toolbox">打开工具箱</string>
+    <string name="choose_target_app_first">请先为这个手势选择目标应用</string>
+    <string name="target_app_unavailable">目标应用不可用，请重新选择</string>
+    <string name="flashlight_unavailable">手电筒不可用，请检查硬件或相机权限</string>
+    <string name="screenshot_unavailable">截屏需要 Android 14 或更高版本</string>
+    <string name="app_picker_title">选择要打开的应用</string>
+    <string name="app_search_hint">搜索应用名称或包名</string>
+    <string name="app_search_empty">没有找到匹配的应用</string>
+    <string name="no_launchable_apps">没有找到可打开的应用</string>
+    <string name="camera_permission_denied">未开启相机权限，无法使用手电筒</string>
+    <string name="open_app_value">打开 %1$s</string>
+    <string name="choose_app_value">选择应用</string>
+
+    <string name="overlay_permission_name">显示在其他应用上层</string>
+    <string name="overlay_permission_description">用于把悬浮球显示在当前应用之上。</string>
+    <string name="notification_permission_name">通知权限</string>
+    <string name="notification_permission_description">用于显示前台服务通知，并随时停止悬浮球。</string>
+    <string name="accessibility_permission_name">无障碍服务</string>
+    <string name="accessibility_permission_description">用于执行返回、回桌面、最近任务、快捷开关、锁屏和截屏等系统动作，不读取屏幕内容。</string>
+    <string name="permission_granted">已开启</string>
+    <string name="permission_explanation_title">权限如何使用</string>
+    <string name="required_permissions">所需权限</string>
+    <string name="permission_summary_ready">权限已就绪</string>
+    <string name="permission_summary_missing">还需处理权限</string>
+    <string name="permission_summary_ready_note">悬浮球可以正常运行</string>
+    <string name="permission_summary_missing_note">点击未开启的权限进入系统设置</string>
+    <string name="permission_count">%1$d / %2$d</string>
+    <string name="permission_count_ready">3 / 3</string>
+    <string name="permissions_page_note_body">悬浮窗用于显示悬浮球，前台服务用于保持运行。无障碍服务只执行你触发的系统动作，不读取窗口文字、密码或输入内容。</string>
+
+    <string name="accessibility_service_label">悬浮球操作</string>
+    <string name="accessibility_service_description">允许悬浮球执行返回、回桌面、最近任务、快捷开关、锁屏和截屏等系统动作。服务不读取屏幕内容。</string>
+
+    <string name="about_dialog_title">说明与隐私</string>
+    <string name="about_version_line">版本 %1$s（版本代码 %2$d）</string>
+    <string name="about_dialog_message_with_version">%1$s\n\n%2$s</string>
+    <string name="about_dialog_message">独去闲工具箱完全在本机运行，不连接服务器，不读取窗口内容、密码或个人输入，不采集使用记录。\n\n悬浮窗用于显示悬浮球；前台服务用于保持它运行；无障碍服务只用于执行你选择或触发的系统动作。\n\n你可以从运行通知或悬浮球设置页随时停止悬浮球，并在系统设置中关闭无障碍服务。</string>
+    <string name="close">关闭</string>
+    <string name="back">返回</string>
+</resources>
+

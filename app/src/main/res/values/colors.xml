@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red_primary">#D8443C</color>
+    <color name="red_dark">#B52F29</color>
+    <color name="red_soft">#FCE9E7</color>
+    <color name="red_soft_stroke">#F3CAC6</color>
+    <color name="screen_background">#F8F5F2</color>
+    <color name="surface">#FFFDFC</color>
+    <color name="surface_alt">#F2EEEA</color>
+    <color name="text_primary">#211D1B</color>
+    <color name="text_secondary">#756C67</color>
+    <color name="divider">#EAE3DE</color>
+    <color name="success">#247A57</color>
+    <color name="success_soft">#E7F1EC</color>
+    <color name="warning">#94651C</color>
+    <color name="warning_soft">#FBEFDD</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="launcher_background">#D8443C</color>
+    <color name="bubble_outer">#D8DAD7</color>
+    <color name="bubble_inner">#686D68</color>
+</resources>
+

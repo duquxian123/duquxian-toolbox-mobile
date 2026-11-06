@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="44dp"
+    android:height="44dp"
+    android:viewportWidth="44"
+    android:viewportHeight="44">
+    <path
+        android:fillColor="@color/bubble_outer"
+        android:pathData="M22,4A18,18 0,1 0,22 40A18,18 0,1 0,22 4" />
+    <path
+        android:fillColor="@color/bubble_inner"
+        android:pathData="M22,14A8,8 0,1 0,22 30A8,8 0,1 0,22 14" />
+</vector>
+
