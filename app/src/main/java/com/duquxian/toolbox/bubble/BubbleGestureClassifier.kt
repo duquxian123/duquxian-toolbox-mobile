@@ -19,10 +19,7 @@ internal class BubbleGestureClassifier(
 
     private enum class Mode {
         UNDECIDED,
-        SWIPE_UP,
-        SWIPE_DOWN,
-        SWIPE_LEFT,
-        SWIPE_RIGHT,
+        SWIPE_CANDIDATE,
         DRAGGING,
     }
 
@@ -40,17 +37,9 @@ internal class BubbleGestureClassifier(
             return false
         }
 
-        when {
-            abs(deltaY) > abs(deltaX) * AXIS_DOMINANCE &&
-                abs(deltaY) >= swipeThreshold -> {
-                mode = if (deltaY < 0f) Mode.SWIPE_UP else Mode.SWIPE_DOWN
-                return true
-            }
-            abs(deltaX) > abs(deltaY) * AXIS_DOMINANCE &&
-                abs(deltaX) >= swipeThreshold -> {
-                mode = if (deltaX < 0f) Mode.SWIPE_LEFT else Mode.SWIPE_RIGHT
-                return true
-            }
+        if (isSwipe(deltaX, deltaY)) {
+            mode = Mode.SWIPE_CANDIDATE
+            return true
         }
         return false
     }
@@ -66,10 +55,7 @@ internal class BubbleGestureClassifier(
     fun onUp(deltaX: Float, deltaY: Float): Result {
         return when (mode) {
             Mode.DRAGGING -> Result.DRAG_END
-            Mode.SWIPE_UP -> Result.SWIPE_UP
-            Mode.SWIPE_DOWN -> Result.SWIPE_DOWN
-            Mode.SWIPE_LEFT -> Result.SWIPE_LEFT
-            Mode.SWIPE_RIGHT -> Result.SWIPE_RIGHT
+            Mode.SWIPE_CANDIDATE -> finalSwipeResult(deltaX, deltaY)
             Mode.UNDECIDED -> {
                 if (abs(deltaX) <= touchSlop && abs(deltaY) <= touchSlop) {
                     Result.TAP
@@ -82,6 +68,25 @@ internal class BubbleGestureClassifier(
 
     fun onCancel(): Result {
         return if (mode == Mode.DRAGGING) Result.DRAG_END else Result.IGNORE
+    }
+
+    private fun finalSwipeResult(deltaX: Float, deltaY: Float): Result {
+        if (!isSwipe(deltaX, deltaY)) return Result.IGNORE
+        return when {
+            abs(deltaY) > abs(deltaX) -> {
+                if (deltaY < 0f) Result.SWIPE_UP else Result.SWIPE_DOWN
+            }
+            else -> {
+                if (deltaX < 0f) Result.SWIPE_LEFT else Result.SWIPE_RIGHT
+            }
+        }
+    }
+
+    private fun isSwipe(deltaX: Float, deltaY: Float): Boolean {
+        return (abs(deltaY) > abs(deltaX) * AXIS_DOMINANCE &&
+            abs(deltaY) >= swipeThreshold) ||
+            (abs(deltaX) > abs(deltaY) * AXIS_DOMINANCE &&
+                abs(deltaX) >= swipeThreshold)
     }
 
     companion object {

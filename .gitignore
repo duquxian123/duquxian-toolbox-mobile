@@ -9,6 +9,7 @@ local.properties
 
 # Local, project-scoped tooling
 .tooling/
+ztemp/
 
 # Signing and release material
 *.jks

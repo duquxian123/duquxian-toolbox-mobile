@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>出差报销随手记</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="appbar">
+      <button class="back-button" id="backButton" type="button" aria-label="返回">‹</button>
+      <h1 id="pageTitle">出差报销随手记</h1>
+      <button class="top-action" id="topAction" type="button" aria-label="更多操作" hidden>···</button>
+    </header>
+
+    <main id="view" class="view" aria-live="polite"></main>
+
+    <nav id="tabbar" class="tabbar" aria-label="主要导航" hidden>
+      <button type="button" data-tab="trips">行程</button>
+      <button type="button" data-tab="stats">统计</button>
+      <button type="button" data-tab="settings">设置</button>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <div id="modal" class="modal" hidden>
+    <button class="modal-backdrop" type="button" data-modal-cancel aria-label="关闭"></button>
+    <section id="modalSheet" class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></section>
+  </div>
+
+  <script src="store.js"></script>
+  <script src="xlsx.js"></script>
+  <script src="excel.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+

@@ -24,7 +24,7 @@ class BubbleGestureClassifierTest {
     }
 
     @Test
-    fun upwardSwipeIsLockedBeforeLongPress() {
+    fun upwardSwipeDisablesLongPress() {
         val classifier = classifier()
         classifier.reset()
 
@@ -111,6 +111,44 @@ class BubbleGestureClassifierTest {
         assertEquals(
             BubbleGestureClassifier.Result.IGNORE,
             classifier.onUp(deltaX = 30f, deltaY = 28f),
+        )
+    }
+
+    @Test
+    fun finalUpwardMovementOverridesEarlierDownwardMovement() {
+        val classifier = classifier()
+        classifier.reset()
+
+        assertTrue(classifier.onMove(deltaX = 0f, deltaY = 32f))
+        assertFalse(classifier.onMove(deltaX = 0f, deltaY = 8f))
+
+        assertEquals(
+            BubbleGestureClassifier.Result.SWIPE_UP,
+            classifier.onUp(deltaX = 0f, deltaY = -32f),
+        )
+    }
+
+    @Test
+    fun finalHorizontalMovementOverridesEarlierOppositeMovement() {
+        val classifier = classifier()
+        classifier.reset()
+        classifier.onMove(deltaX = -32f, deltaY = 2f)
+
+        assertEquals(
+            BubbleGestureClassifier.Result.SWIPE_RIGHT,
+            classifier.onUp(deltaX = 32f, deltaY = 2f),
+        )
+    }
+
+    @Test
+    fun returningNearStartAfterSwipeDoesNotBecomeTap() {
+        val classifier = classifier()
+        classifier.reset()
+        classifier.onMove(deltaX = 0f, deltaY = 30f)
+
+        assertEquals(
+            BubbleGestureClassifier.Result.IGNORE,
+            classifier.onUp(deltaX = 0f, deltaY = 2f),
         )
     }
 }

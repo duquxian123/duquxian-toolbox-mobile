@@ -11,8 +11,8 @@ android {
         applicationId = "com.duquxian.toolbox"
         minSdk = 28
         targetSdk = 35
-        versionCode = 16
-        versionName = "0.8.0"
+        versionCode = 18
+        versionName = "0.9.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,6 +47,7 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.10.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
     implementation("androidx.datastore:datastore-preferences:1.1.2")
+    implementation("androidx.webkit:webkit:1.12.1")
     implementation("com.google.android.material:material:1.12.0")
     testImplementation("junit:junit:4.13.2")
 }

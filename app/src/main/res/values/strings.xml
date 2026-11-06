@@ -7,6 +7,10 @@
 
     <string name="bubble_name">悬浮球</string>
     <string name="bubble_summary">仿Flyme悬浮球</string>
+    <string name="travel_expense_name">出差报销随手记</string>
+    <string name="travel_expense_summary">行程记账 · 统计与 Excel 导出</string>
+    <string name="travel_expense_share_title">分享报销表格</string>
+    <string name="travel_expense_file_error">无法生成分享文件</string>
     <string name="status_not_enabled">未开启</string>
     <string name="status_missing_permissions">缺少权限</string>
     <string name="status_starting">正在启动</string>

@@ -43,6 +43,10 @@ class MainActivity : AppCompatActivity() {
                 DebugLogger.error("MainActivity", "Failed to open bubble settings", error)
             }
         }
+        binding.cardTravelExpense.setOnClickListener {
+            DebugLogger.event("MainActivity", "Travel expense tool clicked")
+            startActivity(Intent(this, TravelExpenseActivity::class.java))
+        }
         binding.buttonAbout.setOnClickListener {
             showAboutDialog()
         }
