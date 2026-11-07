@@ -1,7 +1,26 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
+
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+val keystoreProperties = Properties().apply {
+    if (keystorePropertiesFile.exists()) {
+        keystorePropertiesFile.inputStream().use(::load)
+    }
+}
+val requiredReleaseProperties = listOf(
+    "storeFile",
+    "storePassword",
+    "keyAlias",
+    "keyPassword",
+)
+val releaseSigningProperties = requiredReleaseProperties.associateWith { property ->
+    keystoreProperties.getProperty(property)?.takeIf(String::isNotBlank)
+}
+val hasReleaseSigning = releaseSigningProperties.values.all { it != null }
 
 android {
     namespace = "com.duquxian.toolbox"
@@ -17,9 +36,23 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        if (hasReleaseSigning) {
+            create("release") {
+                storeFile = rootProject.file(releaseSigningProperties.getValue("storeFile")!!)
+                storePassword = releaseSigningProperties.getValue("storePassword")
+                keyAlias = releaseSigningProperties.getValue("keyAlias")
+                keyPassword = releaseSigningProperties.getValue("keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            if (hasReleaseSigning) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
